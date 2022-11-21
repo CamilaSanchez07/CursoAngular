@@ -4,15 +4,17 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-empleado',
   templateUrl: './empleado.component.html',
   styleUrls: ['./empleado.component.css']
-  // template: "<p>Aquí iría un empleado</p>",
-  // styles: ["p{background-color:red;}"]
 })
 export class EmpleadoComponent implements OnInit {
 
   nombre = "Camila";
   apellido = "Sánchez";
   edad = 17;
-  // empresa = "CBTis 72";
+  
+  empresa = "CBTis 72";
+  cambiaEmpresa(event:Event) {
+    this.empresa=(<HTMLInputElement>event.target).value;
+  }
 
   // getEdad(){
   //   return this.edad;
