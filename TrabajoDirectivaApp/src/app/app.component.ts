@@ -11,7 +11,8 @@ export class AppComponent {
   registrado = false;
   nombre:string="";
   apellido:string="";
-  entradas:object[];
+  cargo:string="";
+  entradas:Array<{titulo:string}>;
 
   constructor() {
     this.entradas=[

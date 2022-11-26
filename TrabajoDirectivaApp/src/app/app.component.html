@@ -2,17 +2,23 @@
 <form>
   <input type="text" name="nombre" [(ngModel)]="nombre"><br><br>
   <input type="text" name="apellido" [(ngModel)]="apellido"><br><br>
+  <input type="text" name="cargo" [(ngModel)]="cargo"><br><br>
   <input type="submit" value="Registrar" (click)="registrar()">
 </form>
 <br>
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre de {{nombre}} {{apellido}}</p>
-<ng-template #sinRegistrar>
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}} con el nombre de {{nombre}} {{apellido}} y tiene el cargo de
+  <span [ngClass]="{paraDirectores: cargo=='director'}">{{cargo}}</span></p>
+
+  <ng-template #sinRegistrar>
   <p>Nadie Registrado</p>
 </ng-template>
 
-<br><br><br>
+<br><br>
 
 <h2>Ejemplo de ngFor</h2>
-<!-- <ul>
-  <li *ngFor="let entrada of entradas">{{entrada.titulo}}</li>
-</ul> -->
+<ul>
+  <li *ngFor="let entrada of entradas; let i=index">
+    <span style="font-size: larger; font-weight: bold;">{{entrada.titulo }}</span>
+    - Entrada {{i+1}}
+  </li>
+</ul>
