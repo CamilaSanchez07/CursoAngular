@@ -2,7 +2,12 @@
     <div class="row">
       <div class="col">
         <div>
-          {{indice+1}} - {{empleadoLista.nombre}} {{empleadoLista.apellido}} {{empleadoLista.cargo}}  {{empleadoLista.salario}}
+          {{indice+1}} - {{empleadoLista.nombre}} {{empleadoLista.apellido}} / {{empleadoLista.cargo}} / {{empleadoLista.salario}}
+          
+          <a [routerLink]="['/actualizar', indice]" [queryParams]="{accion:'1'}">Actualizar</a>
+          &nbsp;&nbsp;
+          <a [routerLink]="['/actualizar', indice]" [queryParams]="{accion:'2'}">Eliminar</a>
+        
         </div>
 
         <app-caracteristicas-empleado-c (crtEmpleado)="agregarCaracteristica($event)">
